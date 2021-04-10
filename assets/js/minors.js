@@ -13,21 +13,26 @@ getData({path:'/minors/'}).done(function(json){
 
     console.log(json);
 
-    let minor;
     
-    $.each(json, function(index, value){
-        $.each(value, function(index1, value1){
-            minor = "";
-            console.log("index 1: " + index1);
-            console.log(value1);
-            console.log(value1.name);
-            minor = "<h3>" + value1.title + "</h3>" ;
-            /*$.each(value1, function(index2, value2){
-                $('#ugAccordion').append('<b>'+ index2+ ': </b>' + value2 + "<br>");
-                console.log("index 2: " + index2);
-                console.log(value2);
-            });*/
-            $('#ugAccordion').append(minor + "</br>");
+    $.each(json, function(index, obj){
+        
+        $.each(obj, function(index1, minor){
+            
+            let heading;
+            let div;
+
+            heading = "<h3><b>" + minor.title + "</b></h3>";
+            div = "<div>" + minor.name + "<br>" +
+                            minor.description + "<br>";
+            $('#ugAccordion').append(heading);
+            div = div + "<ul>";
+            $.each(minor.courses, function(index2, course){
+                div = div + "<li>" + course + "</li>"
+            });
+            div = div + "</ul>";
+            div = div + minor.note + "</div>";
+            
+            $('#ugAccordion').append(div);
         });
     });
     $("#ugAccordion").accordion({
