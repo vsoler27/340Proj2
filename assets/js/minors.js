@@ -9,23 +9,25 @@ function getData(pathName){
             })
 }
 
-// The value you assign to the 'path' parameter, in this example '/minors/', is the 'ist.rit.edu/api' 
-// endpoint you wish to retrieve data from.
-// Starting on line 16, you will write code to parse the returned data and display it in a jQueryUI widget of 
-// your choosing.
 getData({path:'/minors/'}).done(function(json){
 
     console.log(json);
 
-    let heading;
-    let div;
-
+    let minor;
+    
     $.each(json, function(index, value){
         $.each(value, function(index1, value1){
-            $.each(value1, function(index2, value2){
+            minor = "";
+            console.log("index 1: " + index1);
+            console.log(value1);
+            console.log(value1.name);
+            minor = "<h3>" + value1.title + "</h3>" ;
+            /*$.each(value1, function(index2, value2){
                 $('#ugAccordion').append('<b>'+ index2+ ': </b>' + value2 + "<br>");
-            });
-            $('#ugAccordion').append("<br>");
+                console.log("index 2: " + index2);
+                console.log(value2);
+            });*/
+            $('#ugAccordion').append(minor + "</br>");
         });
     });
     $("#ugAccordion").accordion({
