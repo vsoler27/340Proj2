@@ -17,47 +17,31 @@ $(document).ready(function(){
         // Your Code To Process Output Goes here
         console.log(json);
 
-        let heading1;
+        let heading1 = "<h3>Undergraduate Degrees</h3>";
         let div1;
+        $.each(json.undergraduate, function(index1,degree1) {
+            console.log(degree1);
+        })
 
-        let heading2;
+        let heading2 = "<h3>Graduate Degrees</h3>";
         let div2
 
     }).fail (function(jqXHR) {
         // Consider using the jQueryUI "Dialog" widget to display errors
         $('#degrees').append(jqXHR.responseText);
     });
+
+    //json format
+    //undergrad
+        //title
+        //degree name
+        //description
+        //concentrations (array)
+            //key and value
+    //grad
+        //title
+        //degree name
+        //description
+        //concentrations (array)
+            //key and value
 })
-/*
-$(document).ready(function () {
-        
-            let ugDegrees = underGrad.undergraduate;
-
-            let degreeDetails;
-            let concentrations;
-            for (let i = 0; i < ugDegrees.length; i++ ){
-                $("#ugAccordion").append("<h3>" + ugDegrees[i].degreeName.toUpperCase() + "</h3>")
-                    degreeDetails = "<div>" +
-                        ugDegrees[i].title + "<br>" +
-                        ugDegrees[i].description + "<br>";
-
-                        concentrations = "<br>Concentrations:"
-                        concentrations = concentrations + "<ul>";
-                        for (let j = 0; j < ugDegrees[i].concentrations.length; j++) {
-                            concentrations = concentrations +
-                            "<li>" + ugDegrees[i].concentrations[j] + "</li>"
-                        }
-                    concentrations = concentrations + "</ul>";
-                    degreeDetails = degreeDetails + concentrations;
-                $("#ugAccordion").append(
-                    degreeDetails
-                )                        
-            }
-
-            $("#ugAccordion").accordion({
-                collapsible: true,
-                active: false,
-                heightStyle: "content"
-            });
-        });
-*/

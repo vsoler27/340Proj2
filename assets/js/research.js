@@ -27,7 +27,6 @@ $(document).ready(function(){
         })
         div = div + " </ul>Interest Area: <ul>"
         $.each(json.byInterestArea, function(index, area) {
-            console.log(area);
             div = div + "<li>" + area.areaName + "<br>";
             $.each(area.citations, function(index2,citation) {
                 div = div + citation + "<br>";
