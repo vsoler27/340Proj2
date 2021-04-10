@@ -23,14 +23,19 @@ getData({path:'/minors/'}).done(function(json){
     $.each(json, function(index, value){
         $.each(value, function(index1, value1){
             $.each(value1, function(index2, value2){
-                $('#minorsContent').append('<b>'+ index2+ ': </b>' + value2 + "<br>");
+                $('#ugAccordion').append('<b>'+ index2+ ': </b>' + value2 + "<br>");
             });
-            $('#minorsContent').append("<br>");
+            $('#ugAccordion').append("<br>");
         });
+    });
+    $("#ugAccordion").accordion({
+        collapsible: true,
+        active: false,
+        heightStyle: "content"
     });
 });
 
-$(document).ready(function(){
+/*$(document).ready(function(){
         
     let ugDegrees = underGrad.undergraduate;
 
@@ -60,4 +65,4 @@ $(document).ready(function(){
         active: false,
         heightStyle: "content"
     });
-});
+});*/
