@@ -17,6 +17,12 @@ $(document).ready(function(){
         // Your Code To Process Output Goes here
         console.log(json);
 
+        let heading1;
+        let div1;
+
+        let heading2;
+        let div2
+
     }).fail (function(jqXHR) {
         // Consider using the jQueryUI "Dialog" widget to display errors
         $('#degrees').append(jqXHR.responseText);
