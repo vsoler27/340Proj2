@@ -45,13 +45,15 @@ $(document).ready(function(){
             $("#undergrad").append(heading2);
             $("#undergrad").append(div2);   
         })
-        $("#grad").accordion({
+        
+        
+        $("#undergrad").accordion({
             collapsible: true,
             active: false,
             heightStyle: "content"
         });
-        
-        $("#undergrad").accordion({
+
+        $("#grad").accordion({
             collapsible: true,
             active: false,
             heightStyle: "content"

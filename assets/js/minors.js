@@ -24,7 +24,7 @@ getData({path:'/minors/'}).done(function(json){
             heading = "<h3><b>" + minor.title + "</b></h3>";
             div = "<div>" + minor.name + "<br>" +
                             minor.description + "<br>";
-            $('#ugAccordion').append(heading);
+            $('#minors').append(heading);
             div = div + "<ul>";
             $.each(minor.courses, function(index2, course){
                 div = div + "<li>" + course + "</li>"
@@ -32,10 +32,10 @@ getData({path:'/minors/'}).done(function(json){
             div = div + "</ul>";
             div = div + minor.note + "</div>";
             
-            $('#ugAccordion').append(div);
+            $('#minors').append(div);
         });
     });
-    $("#ugAccordion").accordion({
+    $("#minors").accordion({
         collapsible: true,
         active: false,
         heightStyle: "content"
