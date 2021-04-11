@@ -14,7 +14,7 @@ $(document).ready(function(){
     getData({path:'/people/faculty/'}).done(function(data){
 
         // Your Code To Process Output Goes here
-        console.log(data)
+        //console.log(data)
 
     }).fail (function(jqXHR) {
         // Consider using the jQueryUI "Dialog" widget to display errors

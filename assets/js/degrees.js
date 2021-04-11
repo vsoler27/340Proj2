@@ -12,7 +12,7 @@ $(document).ready(function(){
         })
     }
 
-    getData({path:'/degrees/'}).done(function(json){
+    getData({path:'/degrees/'}).done(function(json) {
 
         // Your Code To Process Output Goes here
         console.log(json);
@@ -22,7 +22,7 @@ $(document).ready(function(){
         let heading2;
         let div2;
 
-        $.each(json.undergraduate, function(index1,degree1) {
+        $.each(json.undergraduate, function (index1, degree1) {
             heading1 = "<h3>" + degree1.title + "</h3>";
             div1 = "<div>" + degree1.description + "<br>Concentrations: </ul>";
             $.each(degree1.concentrations, function(index2,concentration) {
@@ -35,7 +35,7 @@ $(document).ready(function(){
         })
         
         //problem here bc last graduate entry doesnt have a title and is a certificate
-        $.each(json.graduate, function(index2,degree2) {
+        $.each(json.graduate, function (index2, degree2) {
             heading2 = "<h3>" + degree2.title + "</h3>";
             div2 = "<div>" + degree2.description + "<br>Concentrations: </ul>";
             $.each(degree2.concentrations, function(index2,concentration) {

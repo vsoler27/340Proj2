@@ -11,10 +11,14 @@ $(document).ready(function(){
         })
     }
 
-    getData({path:'/research/'}).done(function(json){
+    getData({ path: '/research/' }).done(function (json) {
+        
+        //console.log(json);
 
+        
+/*
         // Your Code To Process Output Goes here
-        console.log(json);
+        
         let heading = "<h3>Research</h3>";
         let div = "<div>Faculty Research: <ul>";
         $("#research").append(heading);
@@ -41,9 +45,9 @@ $(document).ready(function(){
             active: false,
             heightStyle: "content"
         });
-
+*/
     }).fail (function(jqXHR) {
         // Consider using the jQueryUI "Dialog" widget to display errors
         $('#research').append(jqXHR.responseText);
-    });
-})
+    })
+}) 

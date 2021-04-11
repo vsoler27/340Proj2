@@ -14,7 +14,7 @@ $(document).ready(function(){
     getData({path:'/employment/'}).done(function(json){
 
         // Your Code To Process Output Goes here
-        console.log(json);
+        //console.log(json);
 
     }).fail (function(jqXHR) {
         // Consider using the jQueryUI "Dialog" widget to display errors
