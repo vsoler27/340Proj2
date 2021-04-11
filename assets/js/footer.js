@@ -15,6 +15,7 @@ $(document).ready(function(){
 
         // Your Code To Process Output Goes here
         console.log(json);
+        $('#footer').append("<p>" + json.copyright.html + "</p>");
 
     }).fail (function(jqXHR) {
         // Consider using the jQueryUI "Dialog" widget to display errors
