@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     getData({ path: '/minors/' }).done(function (json) {
 
-        //console.log(json);
+        console.log(json);
 
         let heading1;
         let div1;
@@ -21,11 +21,12 @@ $(document).ready(function () {
         $.each(json.UgMinors, function (index1, minor) {
             heading1 = "<h3>" + minor.title + "</h3>";
             div1 = "<div>" + "<br>Description: "
-                + minor.description;
-            getData({ path: 'courses/degreeName=' + minor.name}).done(function (json2) {
-                console.log("inside the second get data");
-                console.log(json2);
-            })
+                + minor.description + "<ul>";
+            $.each(minor.courses, function(index2, course){
+                div1 = div1 + "<li>" + course + "</li>"
+            });
+            div1 = div1 + "</ul>";
+            div1 = div1 + minor.note + "</div>";
 
             $("#minors").append(heading1);
             $("#minors").append(div1);

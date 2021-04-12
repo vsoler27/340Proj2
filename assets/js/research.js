@@ -13,7 +13,7 @@ $(document).ready(function(){
 
     getData({ path: '/research/' }).done(function (json) {
         
-        console.log(json);
+        //console.log(json);
         
         let tabNames1 = "<ul>";
         let divs1 = "";
