@@ -15,7 +15,7 @@ $(document).ready(function(){
     getData({path:'/degrees/'}).done(function(json) {
 
         // Your Code To Process Output Goes here
-        console.log(json);
+        //console.log(json);
 
         let heading1;
         let div1;

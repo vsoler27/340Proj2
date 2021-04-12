@@ -14,7 +14,7 @@ $(document).ready(function(){
     getData({path:'/footer/'}).done(function(json){
 
         // Your Code To Process Output Goes here
-        console.log(json);
+        //console.log(json);
         $('#footer').append("<p>" + json.copyright.html + "</p>");
 
     }).fail (function(jqXHR) {

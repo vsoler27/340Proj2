@@ -15,20 +15,24 @@ $(document).ready(function () {
 
         console.log(json);
 
-        let tabNames = "<ul>";
-        let divs = "";
+        let heading1;
+        let div1;
 
         $.each(json.UgMinors, function (index1, minor) {
-            console.log(minor.title);
-            tabNames = tabNames + "<li>" + minor.title + "</li>";
-            divs = divs + "<div>" + minor.title + "<br>Description: " + minor.description + "</div>";
+            heading1 = "<h3>" + minor.title + "</h3>";
+            div1 = "<div>" + "<br>Description: "
+                + minor.description;
 
-            tabNames = tabNames + "</ul>";
-            $("#minors").append(tabNames);
-            $("#minors").append(divs);
+            $("#minors").append(heading1);
+            $("#minors").append(div1);
             $("#minors").tabs();
            
         })
+        $("#minors").accordion({
+            collapsible: true,
+            active: false,
+            heightStyle: "content"
+        });
 
         
     }).fail (function(jqXHR) {
