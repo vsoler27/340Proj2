@@ -14,7 +14,7 @@ $(document).ready(function(){
     getData({ path: '/research/' }).done(function (json) {
         
         //console.log(json);
-
+        
         //tab layout
        /* getData({path:'/courses/'}).done(function(json){
 
