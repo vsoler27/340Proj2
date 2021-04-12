@@ -14,7 +14,7 @@ $(document).ready(function(){
     getData({path:'/courses/'}).done(function(json){
 
         // Your Code To Process Output Goes here
-        console.log(json);
+        //console.log(json);
 
             let tabNames = "<ul>";
             let divs ='';

@@ -15,7 +15,7 @@ $(document).ready(function(){
     getData({path:'/degrees/'}).done(function(json) {
 
         // Your Code To Process Output Goes here
-        //console.log(json);
+        console.log(json);
 
         let heading1;
         let div1;
@@ -36,14 +36,27 @@ $(document).ready(function(){
         
         //problem here bc last graduate entry doesnt have a title and is a certificate
         $.each(json.graduate, function (index2, degree2) {
-            heading2 = "<h3>" + degree2.title + "</h3>";
-            div2 = "<div>" + degree2.description + "<br>Concentrations: </ul>";
-            $.each(degree2.concentrations, function(index2,concentration) {
-                div2 = div2 + "<li>" + concentration + "</li>";
-            })
-            div2 = div2 + "</ul>";
-            $("#undergrad").append(heading2);
-            $("#undergrad").append(div2);   
+            if (degree2.hasOwnProperty("title")) {
+                heading2 = "<h3>" + degree2.title + "</h3>";
+                div2 = "<div>" + degree2.description + "<br>Concentrations: </ul>";
+                $.each(degree2.concentrations, function(index2,concentration) {
+                    div2 = div2 + "<li>" + concentration + "</li>";
+                })
+                div2 = div2 + "</ul>";
+                $("#grad").append(heading2);
+                $("#grad").append(div2);
+            } else {
+                heading2 = "<h3>" + degree2.degreeName + "</h3>";
+                div2 = div2 + "Available Certificates</ul>";
+                $.each(degree2.availableCertificates, function(index2,certificate) {
+                    div2 = div2 + "<li>" + certificate + "</li>";
+                })
+                div2 = div2 + "</ul>";
+                $("#grad").append(heading2);
+                $("#grad").append(div2);
+            }
+            
+            
         })
         
         
