@@ -13,8 +13,40 @@ $(document).ready(function(){
 
     getData({ path: '/research/' }).done(function (json) {
         
-        //console.log(json);
+        console.log(json);
         
+        let tabNames1 = "<ul>";
+        let divs1 = "";
+
+        let tabNames2 = "<ul>";
+        let divs2 = "";
+
+        $.each(json.byFaculty, function(index1,research1) {
+            tabNames1 = tabNames1 + "<li><a href='#divID" + index1 + "'>" + research1.facultyName + "</a></li>";
+            divs1 = divs1 + "<div id=divID" + index1 + "> Username: " + research1.username + "<br><ul>";
+            $.each(research1.citations, function(index2,citation) {
+                divs1 = divs1 + "<li>" + citation + "</li>";
+            })
+            divs1 = divs1 + "</ul></div>";
+        })
+        tabNames1 = tabNames1 + "</ul>";
+        $("#faculty").append(tabNames1);
+        $("#faculty").append(divs1);
+        $("#faculty").tabs();
+
+        $.each(json.byInterestArea, function(index1,research2) {
+            tabNames2 = tabNames2 + "<li><a href='#divID" + index1 + "'>" + research2.areaName + "</a></li>";
+            divs2 = divs2 + "<div id=divID" + index1 + "> <ul>"
+            $.each(research2.citations, function(index2,citation) {
+                divs2 = divs2 + "<li>" +  citation + "</li>";
+            })
+            divs2 = divs2 + "</ul></div>";
+        })
+        tabNames2 = tabNames2 + "</ul>";
+        $("#interest").append(tabNames2);
+        $("#interest").append(divs2);
+        $("#interest").tabs();
+       
         //tab layout
        /* getData({path:'/courses/'}).done(function(json){
 
@@ -48,36 +80,6 @@ $(document).ready(function(){
     })*/
 
         
-/*
-        // Your Code To Process Output Goes here
-        
-        let heading = "<h3>Research</h3>";
-        let div = "<div>Faculty Research: <ul>";
-        $("#research").append(heading);
-        $.each(json.byFaculty, function(index, research) {
-            div = div + "<li>" + research.facultyName + "<br>" + research.username + "<br>";
-            $.each(research.citations, function(index1,citation) {
-                div = div + citation + "<br>";
-            })
-            div = div + "</li>";
-        })
-        div = div + " </ul>Interest Area: <ul>"
-        $.each(json.byInterestArea, function(index, area) {
-            div = div + "<li>" + area.areaName + "<br>";
-            $.each(area.citations, function(index2,citation) {
-                div = div + citation + "<br>";
-            })
-            div = div + "</li>";
-        })
-        div = div + "</div>";
-        $("#research").append(div);
-        
-        $("#research").accordion({
-            collapsible: true,
-            active: false,
-            heightStyle: "content"
-        });
-*/
     }).fail (function(jqXHR) {
         // Consider using the jQueryUI "Dialog" widget to display errors
         $('#research').append(jqXHR.responseText);
