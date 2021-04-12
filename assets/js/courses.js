@@ -14,7 +14,7 @@ $(document).ready(function(){
     getData({path:'/courses/'}).done(function(json){
 
         // Your Code To Process Output Goes here
-        //console.log(json);
+        console.log(json);
 
             let tabNames = "<ul>";
             let divs ='';
@@ -25,8 +25,7 @@ $(document).ready(function(){
                 divs = divs + course.semester;
                 $.each(course.courses, function (index2, courseInfo) {
                     divs = divs + "<div id=divID" + index2 + ">"
-                        + courseInfo.semester + "<br>" +
-                        courseInfo.description + "</div>";
+                        + courseInfo + "</div>";
                 })
 
                 
