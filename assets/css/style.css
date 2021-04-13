@@ -21,12 +21,12 @@ h1 {
     align-items: center;
 }
 .nav a:hover {
-  background-color: #f8d7fd;
+  background-color: #ccd232;
   color: black;
 }
 .nav a.active {
-  background-color: #f8d7fd;
-  color: black;
+  background-color: #ff6b7f;
+  color: white;
 }
 .nav a {
   float: left;
@@ -36,10 +36,13 @@ h1 {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  background-color: #93c3cd;
 }
 .nav {
   overflow: hidden;
 }
 #footer {
     text-align: center;
+    border:1px solid black;
+    margin: auto;
 }
