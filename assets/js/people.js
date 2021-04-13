@@ -14,7 +14,7 @@ $(document).ready(function(){
     getData({path:'/people/faculty/'}).done(function(data){
 
         // Your Code To Process Output Goes here
-        console.log(data)
+        //console.log(data)
         let tabNames = "<ul>";
         let divs = "";
 
