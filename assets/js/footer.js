@@ -15,6 +15,11 @@ $(document).ready(function(){
 
         // Your Code To Process Output Goes here
         //console.log(json);
+        $.each(json.quickLinks, function(index,link) {
+            $('#footer').append("<a href='" + link.href + "'>" + link.title + "</a>");
+        })
+        $('#footer').append("<p>" + json.social.title + "<br>" + json.social.tweet + " by: " + json.social.by + "</p>");
+        $('#footer').append("<a href='>" + json.social.twitter + "'>Twitter</a><a href='" + json.social.facebook + "'>Facebook</a>")
         $('#footer').append("<p>" + json.copyright.html + "</p>");
 
     }).fail (function(jqXHR) {

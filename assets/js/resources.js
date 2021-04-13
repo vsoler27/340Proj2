@@ -28,7 +28,6 @@ $(document).ready(function(){
             $('#resources').append("<p><b>" + place.nameOfPlace + ": </b>" + place.description + "</p>");
         })
 
-        console.log(json.studentServices);
         //student services info
         $('#resources').append("<h3>" + json.studentServices.title + "</h3>");
         $('#resources').append("<h4>" + json.studentServices.academicAdvisors.title + "</h4>");
