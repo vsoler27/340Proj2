@@ -1,0 +1,12 @@
+h3, h2, h1 {
+    text-align: center;
+}
+#degrees, #minors {
+    align-items: center;
+    width: 50%;
+    margin: auto;
+}
+#about {
+    width: 50%;
+    margin: auto;
+}
