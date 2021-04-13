@@ -14,7 +14,7 @@ $(document).ready(function(){
     getData({path:'/employment/'}).done(function(json){
 
         // Your Code To Process Output Goes here
-        console.log(json);
+        //console.log(json);
 
         //introduction display
         $("#employment").append("<h2>" + json.introduction.title + "</h2>");
