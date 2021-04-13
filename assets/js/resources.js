@@ -28,7 +28,7 @@ $(document).ready(function(){
             $('#resources').append("<p><b>" + place.nameOfPlace + ": </b>" + place.description + "</p>");
         })
 
-        //console.log(json.studentServices);
+        console.log(json.studentServices);
         //student services info
         $('#resources').append("<h3>" + json.studentServices.title + "</h3>");
         $('#resources').append("<h4>" + json.studentServices.academicAdvisors.title + "</h4>");
@@ -38,9 +38,16 @@ $(document).ready(function(){
         $.each(json.studentServices.professonalAdvisors.advisorInformation, function(index,advisor) {
             $('#resources').append("<p>" + advisor.name + " Department: " + advisor.department + " Email: " + advisor.email + "</p>");
         })
-        console.log(json.studentServices.facultyAdvisors);
+        
 
-        //faculty advisors
+        //faculty advisors display
         $('#resources').append("<h3>" + json.studentServices.facultyAdvisors.title + "</h3>");
+        $('#resources').append("<p>" + json.studentServices.facultyAdvisors.description + "</p>");
+
+        //ist minor advising display
+        $('#resources').append("<h3>" + json.studentServices.istMinorAdvising.title + "</h3>");
+        $.each(json.studentServices.istMinorAdvising.minorAdvisorInformation, function(index,minor) {
+            $('#resources').append("<p>Minor: " + minor.title + " Advisor: " + minor.advisor + " Email: " + minor.email + "</p>");
+        })
     });
 })
