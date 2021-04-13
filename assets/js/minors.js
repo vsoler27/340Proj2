@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     getData({ path: '/minors/' }).done(function (json) {
 
-        console.log(json);
+        //console.log(json);
 
         let heading1;
         let div1;
