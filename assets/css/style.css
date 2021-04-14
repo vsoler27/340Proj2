@@ -1,3 +1,8 @@
+body, html {
+  background-image: linear-gradient(#ff6b7f, #93c3cd);
+  height: 100%;
+  margin: 0;
+}
 h3,
 h2,
 h1 {
@@ -19,6 +24,9 @@ h1 {
     width: 50%;
     margin: auto;
     align-items: center;
+    background-color: white;
+    min-height: 100%;
+    margin-bottom: -50px;
 }
 .nav a:hover {
   background-color: #ccd232;
@@ -40,9 +48,44 @@ h1 {
 }
 .nav {
   overflow: hidden;
+  padding: 5%;
 }
 #footer {
     text-align: center;
     border:1px solid black;
     margin: auto;
 }
+.push {
+  height: 50px;
+}
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+  }

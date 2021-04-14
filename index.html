@@ -8,6 +8,8 @@
     <script rel="stylesheet" href="assets/js/ScrollMagic.js"></script>
     <link rel="stylesheet" href="jquery-ui-1.12.1.customhs/jquery-ui.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="responsiveslides.min.js"></script>
     <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 </head>
 
@@ -21,6 +23,13 @@
             <a href="research.html">Research</a>
             <a href="people.html">Faculty</a>
         </nav>
+        <ul class="rslides">
+            <li><img src="assets/images/rit.jpg" alt="RIT"></li>
+            <li><img src="assets/images/ritBuilding.jpg" alt="RIT Building"></li>
+            <li><img src="assets/images/circuitboard.jpg" alt="Dude Working on a curcuitboard."></li>
+            <li><img src="assets/images/outside.jpg" alt="Snapshot of people walking on campus."></li>
+            <li><img src="assets/images/fishbowl.jpg" alt="Graduates jumping in front of the fishbowl and Golisano in the background."></li>
+        </ul>
         <div id="about"></div>
         <div id="degrees">
             <h2>Undergraduate Degrees</h2>
@@ -28,11 +37,16 @@
             <h2>Graduate Degrees</h2>
             <div id="grad"></div>
         </div>
+        <div class="push"></div>
         <div id="footer"></div>
     </div>
 </body>
+<script>
+  $(function() {
+    $(".rslides").responsiveSlides();
+  });
+</script>
 <script src="assets/js/index.js"></script>
 <script src="assets/js/degrees.js"></script>
 <script src="assets/js/footer.js"></script>
-
 </html>
