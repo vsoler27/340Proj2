@@ -10,7 +10,6 @@ $(document).ready(function(){
         })
     }
 
-    //accordion layout pls!!!!
     getData({path:'/courses/'}).done(function(json){
         //console.log(json);
         let heading;
