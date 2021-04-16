@@ -44,9 +44,20 @@ $(document).ready(function(){
         $('#resources').append("<p>" + json.studentServices.facultyAdvisors.description + "</p>");
 
         //ist minor advising display
+        let heading;
+        let divs;
         $('#resources').append("<h3>" + json.studentServices.istMinorAdvising.title + "</h3>");
         $.each(json.studentServices.istMinorAdvising.minorAdvisorInformation, function(index,minor) {
-            $('#resources').append("<p>Minor: " + minor.title + " Advisor: " + minor.advisor + " Email: " + minor.email + "</p>");
+            heading = "<h3>" + minor.title + "</h3>";
+            divs = "<div>" + " Advisor: " + minor.advisor + " Email: " + minor.email + "</div";
+            $("#advising").append(heading);
+            $("#advising").append(divs);
         })
+
+        $("#advising").accordion({
+            collapsible: true,
+            active: false,
+            heightStyle: "content"
+        });
     });
 })
