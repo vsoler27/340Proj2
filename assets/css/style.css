@@ -1,7 +1,6 @@
 body, html {
-  background-image: linear-gradient(#ff6b7f, #93c3cd);
-  height: 100%;
-  margin: 0;
+  background: url("../images/background.jpeg") no-repeat fixed center;
+  background-size: cover;
 }
 h3,
 h2,
@@ -27,7 +26,12 @@ h1 {
     background-color: white;
     min-height: 100%;
     margin-bottom: -50px;
+    padding: 2%;
 }
+hr {
+  border: 5px solid #ff6b7f;
+  border-radius: 5px;
+  margin: auto;}
 .nav a:hover {
   background-color: #ccd232;
   color: black;
@@ -48,7 +52,7 @@ h1 {
 }
 .nav {
   overflow: hidden;
-  padding: 5%;
+  padding-bottom: 2%;
 }
 #footer {
     text-align: center;
