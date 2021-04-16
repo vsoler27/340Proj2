@@ -20,17 +20,17 @@ $(document).ready(function(){
             editing: true,
             sorting: true,
             paging: true,
-        
-            
+
             data: json.coopTable.coopInformation,
         
             fields: [
-                { name: "Employer", type: "text", width: 150 },
-                { name: "Degree", type: "text", width: 100 },
-                { name: "City", type: "text", width: 100 },
-                { name: "Term", type: "text", width:100 },
+                { name: "employer", type: "text", width: 150 },
+                { name: "degree", type: "text", width: 100 },
+                { name: "city", type: "text", width: 100 },
+                { name: "term", type: "text", width:100 },
                 { type: "control" }
             ]
+        
         });
     })
 })
