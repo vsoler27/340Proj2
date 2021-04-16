@@ -14,10 +14,12 @@ $(document).ready(function(){
     getData({path:'/map/'}).done(function(json){
 
         // Your Code To Process Output Goes here
-        //console.log(json);
+        console.log(json);
 
-    }).fail (function(jqXHR) {
+    }).fail (function(json) {
         // Consider using the jQueryUI "Dialog" widget to display errors
-        $('#map').append(jqXHR.responseText);
+//$('#map').append(json.responseText);
+
+        // <iframe src="http://ist.rit.edu/api/map.php" frameborder="0"></iframe>
     });
 })
