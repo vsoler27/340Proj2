@@ -11,6 +11,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="responsiveslides.min.js"></script>
     <script src="assets/jQueryThemes/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery.scrollme.js"></script>
 </head>
 
 <body>
@@ -33,11 +34,25 @@
             <li><img src="assets/images/munsun.jpg" alt="Munsun giving a speech in the Gordon Field House"></li>
         </ul>
         <div id="about"></div>
-        <div id="degrees">
+        <div id="degrees" class="scrollme">
             <h2>Undergraduate Degrees</h2>
-            <div id="undergrad"></div>
+            <div id="undergrad" 
+                class="animateme"
+                data-when="enter"
+                data-from="0.5"
+                data-to="0"
+                data-opacity="0"
+                data-translatex="-200"
+                data-rotatez="90"></div>
             <h2>Graduate Degrees</h2>
-            <div id="grad"></div>
+            <div id="grad" 
+                class="animateme"
+                data-when="enter"
+                data-from="0.5"
+                data-to="0"
+                data-opacity="0"
+                data-translatex="-200"
+                data-rotatez="90"></div>
         </div>
         <hr>
         <div class="push"></div>
