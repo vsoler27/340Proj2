@@ -11,7 +11,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="responsiveslides.min.js"></script>
     <script src="assets/jQueryThemes/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script src="assets/js/jquery.scrollme.js"></script>
+    <script src="jquery.typist-0.0.7/src/jquery.typist.js"></script>
 </head>
 
 <body>
@@ -34,25 +34,13 @@
             <li><img src="assets/images/munsun.jpg" alt="Munsun giving a speech in the Gordon Field House"></li>
         </ul>
         <div id="about"></div>
-        <div id="degrees" class="scrollme">
-            <h2>Undergraduate Degrees</h2>
-            <div id="undergrad" 
-                class="animateme"
-                data-when="enter"
-                data-from="0.5"
-                data-to="0"
-                data-opacity="0"
-                data-translatex="-200"
-                data-rotatez="90"></div>
-            <h2>Graduate Degrees</h2>
-            <div id="grad" 
-                class="animateme"
-                data-when="enter"
-                data-from="0.5"
-                data-to="0"
-                data-opacity="0"
-                data-translatex="-200"
-                data-rotatez="90"></div>
+        <div id="degrees">
+            <h2 class="typist"></h2>
+            <div id="undergrad"></div>
+            <div>
+                <h2 class="typist2"></h2>
+            </div>
+            <div id="grad"></div>
         </div>
         <hr>
         <div class="push"></div>
@@ -63,8 +51,21 @@
   $(function() {
     $(".rslides").responsiveSlides();
   });
+
+  jQuery(function($) {
+	$('.typist').typist({
+		speed: 12,
+		text: 'Undergraduate Degrees'
+    });
+    $('.typist2').typist({
+		speed: 12,
+		text: 'Graduate Degrees'
+	});
+  });
 </script>
 <script src="assets/js/index.js"></script>
 <script src="assets/js/degrees.js"></script>
+<script src="assets/js/jquery.scrollme.js"></script>
 <script src="assets/js/footer.js"></script>
+<script src="assets/js/jquery.scrollme.js"></script>
 </html>
