@@ -1,19 +1,25 @@
+<!-- ISTE 340 | Project 2 | Darlene Ardila && Vicky Soler -->
+<!-- Employment page displays employment content, a grid of careers, and a map -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employment</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script rel="stylesheet" href="assets/js/ScrollMagic.js"></script>
     <link rel="stylesheet" href="assets/jQueryThemes/jquery-ui-1.12.1.customhs/jquery-ui.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/jQueryThemes/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <link type="text/css" rel="stylesheet" href="jsgrid-1.5.3/jsgrid.min.css" />
     <link type="text/css" rel="stylesheet" href="jsgrid-1.5.3/jsgrid-theme.min.css" />
     <script type="text/javascript" src="jsgrid-1.5.3/jsgrid.min.js"></script>
+    <script src="assets/js/employment.js"></script>
+    <script src="assets/js/grid.js"></script>
+    <script src="assets/js/footer.js"></script>
 </head>
 <body>   
     <div class="content">
+        <!-- Navigation -->
         <nav class="nav" id="myNav">
             <a href="index.html">Home</a>
             <a href="minors.html">Minors</a>
@@ -23,20 +29,21 @@
             <a href="people.html">Faculty</a>
             <a href="resources.html">Resources</a>
         </nav>
+        <!-- End of navigation -->
+        <!-- Employment content -->
         <h2>Employment</h2>
         <div id="employment"></div>
+        <!-- Grid of careers -->
         <div id="jsGrid"></div>
+        <!-- Map -->
         <h2>Map of Employers</h2>
         <div id="map" class="image-ink">
             <iframe src="http://ist.rit.edu/api/map.php"></iframe>
         </div>
+        <!-- Footer Content -->
         <hr>
         <div class="push"></div>
         <div id="footer"></div>
     </div>
 </body>
-<script src="assets/js/employment.js"></script>
-<script src="assets/js/grid.js"></script>
-<script src="assets/js/footer.js"></script>
-
 </html>

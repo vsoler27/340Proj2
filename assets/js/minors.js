@@ -1,3 +1,5 @@
+// ISTE 340 | Project 2 | Darlene Ardila && Vicky Soler
+
 $(document).ready(function () {
 
     function getData(pathName) {
@@ -12,11 +14,10 @@ $(document).ready(function () {
     }
 
     getData({ path: '/minors/' }).done(function (json) {
-
         //console.log(json);
 
-        let heading1;
-        let div1;
+        let heading1; //headings for accordian
+        let div1; //div for accordian content
 
         $.each(json.UgMinors, function (index1, minor) {
             heading1 = "<h3>" + minor.title + "</h3>";
@@ -29,21 +30,16 @@ $(document).ready(function () {
             div1 = div1 + minor.note + "</div>";
 
             $("#minors").append(heading1);
-            $("#minors").append(div1);
-
-           
+            $("#minors").append(div1);           
         })
+        //creating accordian
         $("#minors").accordion({
             collapsible: true,
             active: false,
             heightStyle: "content"
         });
 
-        
     }).fail (function(jqXHR) {
-        // Consider using the jQueryUI "Dialog" widget to display errors
         $('#minors').append(jqXHR.responseText);
     });
-
-
 })

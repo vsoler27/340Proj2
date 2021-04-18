@@ -1,71 +1,78 @@
+<!-- ISTE 340 | Project 2 | Darlene Ardila && Vicky Soler -->
+<!-- Home page displays degrees offered at RIT, the about, and a slideshow -->
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script rel="stylesheet" href="assets/js/ScrollMagic.js"></script>
-    <link rel="stylesheet" href="assets/jQueryThemes/jquery-ui-1.12.1.customhs/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="responsiveslides.min.js"></script>
-    <script src="assets/jQueryThemes/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script src="jquery.typist-0.0.7/src/jquery.typist.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <link rel="stylesheet" href="assets/jQueryThemes/jquery-ui-1.12.1.customhs/jquery-ui.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="assets/js/responsiveslides.min.js"></script>
+  <script src="assets/jQueryThemes/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <script src="jquery.typist-0.0.7/src/jquery.typist.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script src="assets/js/degrees.js"></script>
+  <script src="assets/js/footer.js"></script>
 </head>
-
 <body>
-    <div class="content">
-        <nav class="nav" id="myNav">
-            <a href="index.html" class="active">Home</a>
-            <a href="minors.html">Minors</a>
-            <a href="courses.html">Courses</a>
-            <a href="employment.html">Employment</a>
-            <a href="research.html">Research</a>
-            <a href="people.html">Faculty</a>
-            <a href="resources.html">Resources</a>
-        </nav>
-        <ul class="rslides">
-            <li><img src="assets/images/rit.jpg" alt="RIT"></li>
-            <li><img src="assets/images/ritBuilding.jpg" alt="RIT Building"></li>
-            <li><img src="assets/images/circuitboard.jpg" alt="Dude Working on a curcuitboard."></li>
-            <li><img src="assets/images/outside.jpg" alt="Snapshot of people walking on campus."></li>
-            <li><img src="assets/images/fishbowl.jpg" alt="Graduates jumping in front of the fishbowl and Golisano in the background."></li>
-            <li><img src="assets/images/munsun.jpg" alt="Munsun giving a speech in the Gordon Field House"></li>
-        </ul>
-        <div id="about"></div>
-        <div id="degrees">
-            <h2 class="typist"></h2>
-            <div id="undergrad"></div>
-            <div>
-                <h2 class="typist2"></h2>
-            </div>
-            <div id="grad"></div>
-        </div>
-        <hr>
-        <div class="push"></div>
-        <div id="footer"></div>
+  <div class="content">
+    <!-- Navigation -->
+    <nav class="nav" id="myNav">
+      <a href="index.html" class="active">Home</a>
+      <a href="minors.html">Minors</a>
+      <a href="courses.html">Courses</a>
+      <a href="employment.html">Employment</a>
+      <a href="research.html">Research</a>
+      <a href="people.html">Faculty</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+    <!-- End of navigation -->
+    <!-- SLideshow -->
+    <ul class="rslides">
+      <li><img src="assets/images/rit.jpg" alt="RIT"></li>
+      <li><img src="assets/images/ritBuilding.jpg" alt="RIT Building"></li>
+      <li><img src="assets/images/circuitboard.jpg" alt="Dude Working on a curcuitboard."></li>
+      <li><img src="assets/images/outside.jpg" alt="Snapshot of people walking on campus."></li>
+      <li><img src="assets/images/fishbowl.jpg"
+          alt="Graduates jumping in front of the fishbowl and Golisano in the background."></li>
+      <li><img src="assets/images/munsun.jpg" alt="Munsun giving a speech in the Gordon Field House"></li>
+    </ul>
+    <!-- End of slideshow -->
+    <!-- About content -->
+    <div id="about"></div>
+    <!-- Accordian of degrees -->
+    <div id="degrees">
+      <h2 class="typist"></h2>
+      <div id="undergrad"></div>
+      <div>
+        <h2 class="typist2"></h2>
+      </div>
+      <div id="grad"></div>
     </div>
-</body>
-<script>
-  $(function() {
+    <!-- Footer Content -->
+    <hr>
+    <div class="push"></div>
+    <div id="footer"></div>
+  </div>
+  <script>
+  // Javascript for slideshow plugin
+  $(function () {
     $(".rslides").responsiveSlides();
   });
 
-  jQuery(function($) {
-	$('.typist').typist({
-		speed: 12,
-		text: 'Undergraduate Degrees'
+  jQuery(function ($) {
+    $('.typist').typist({
+      speed: 12,
+      text: 'Undergraduate Degrees'
     });
     $('.typist2').typist({
-		speed: 12,
-		text: 'Graduate Degrees'
-	});
+      speed: 12,
+      text: 'Graduate Degrees'
+    });
   });
 </script>
-<script src="assets/js/index.js"></script>
-<script src="assets/js/degrees.js"></script>
-<script src="assets/js/jquery.scrollme.js"></script>
-<script src="assets/js/footer.js"></script>
-<script src="assets/js/jquery.scrollme.js"></script>
+</body>
 </html>

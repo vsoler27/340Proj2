@@ -1,3 +1,4 @@
+// ISTE 340 | Project 2 | Darlene Ardila && Vicky Soler
 
 $(document).ready(function(){
 
@@ -34,7 +35,6 @@ $(document).ready(function(){
             //adding content to the first accordion
             $("#undergrad").append(heading1);
             $("#undergrad").append(div1);
-           
         })
         
         $.each(json.graduate, function (index, degree2) {
@@ -69,8 +69,6 @@ $(document).ready(function(){
                 $("#grad").append(heading2);
                 $("#grad").append(div2);
             }
-            
-            
         })
         
         //creating first accordion
@@ -86,12 +84,7 @@ $(document).ready(function(){
             active: false,
             heightStyle: "content"
         });
-
-        
     }).fail (function(jqXHR) {
-        // Consider using the jQueryUI "Dialog" widget to display errors
         $('#degrees').append(jqXHR.responseText);
     });
-
-
 })

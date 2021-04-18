@@ -1,18 +1,21 @@
+<!-- ISTE 340 | Project 2 | Darlene Ardila && Vicky Soler -->
+<!-- Research page displays tabs for research by faculty name and interest area -->
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script rel="stylesheet" href="assets/js/ScrollMagic.js"></script>
     <link rel="stylesheet" href="assets/jQueryThemes/jquery-ui-1.12.1.customhs/jquery-ui.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/jQueryThemes/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="assets/js/research.js"></script>
+    <script src="assets/js/footer.js"></script>
 </head>
-
 <body>
     <div class="content">
+        <!-- Navigation -->
         <nav class="nav" id="myNav">
             <a href="index.html">Home</a>
             <a href="minors.html">Minors</a>
@@ -22,18 +25,18 @@
             <a href="people.html">Faculty</a>
             <a href="resources.html">Resources</a>
         </nav>
+        <!-- End of navigation -->
+        <!-- Research tabs -->
         <div id="research">
             <h2>Research by Faculty Name</h2>
             <div id="faculty"></div>
             <h2>Research by Interest Area</h2>
             <div id="interest"></div>
         </div>
+        <!-- Footer Content -->
         <hr>
         <div class="push"></div>
         <div id="footer"></div>
     </div>
 </body>
-<script src="assets/js/research.js"></script>
-<script src="assets/js/footer.js"></script>
-
 </html>

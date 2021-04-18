@@ -1,4 +1,6 @@
-$(document).ready(function(){
+// ISTE 340 | Project 2 | Darlene Ardila && Vicky Soler
+
+$(document).ready(function () {
 
 	function getData(pathName){
         return $.ajax({
@@ -13,14 +15,11 @@ $(document).ready(function(){
 
     getData({path:'/employment/'}).done(function(json){
 
-        // Your Code To Process Output Goes here
         //console.log(json);
-
         //introduction display
         $("#employment").append("<h2>" + json.introduction.title + "</h2>");
         $.each(json.introduction.content ,function(index,info) {
             $("#employment").append("<p><b>" + info.title + ": </b>" + info.description + "</p>");
-            
         })
 
         //employers display
@@ -35,7 +34,6 @@ $(document).ready(function(){
         $("#employment").append("<h2>" + json.degreeStatistics.title + "</h2>");
         $.each(json.degreeStatistics.statistics ,function(index,stats) {
             $("#employment").append("<p>" + stats.value + " " + stats.description + "</p>");
-            
         })
 
         //careers display
@@ -47,7 +45,6 @@ $(document).ready(function(){
         $("#employment").append("</p>");
 
     }).fail (function(jqXHR) {
-        // Consider using the jQueryUI "Dialog" widget to display errors
         $('#employment').append(jqXHR.responseText);
     });
 })

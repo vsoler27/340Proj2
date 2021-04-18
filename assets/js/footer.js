@@ -1,4 +1,6 @@
-$(document).ready(function(){
+// ISTE 340 | Project 2 | Darlene Ardila && Vicky Soler
+
+$(document).ready(function () {
 
 	function getData(pathName){
         return $.ajax({
@@ -18,7 +20,7 @@ $(document).ready(function(){
         $.each(json.quickLinks, function(index,link) {
             $('#footer').append("<a href='" + link.href + "'>" + link.title + "</a>");
         })
-
+        
         //social media 
         $('#footer').append("<p>" + json.social.title + "<br>" + json.social.tweet + " by: " + json.social.by + "</p>");
         $('#footer').append("<a href='>" + json.social.twitter + "'>Twitter</a><a href='" + json.social.facebook + "'>Facebook</a>")
@@ -27,7 +29,6 @@ $(document).ready(function(){
         $('#footer').append("<p>" + json.copyright.html + "</p>");
 
     }).fail (function(jqXHR) {
-        // Consider using the jQueryUI "Dialog" widget to display errors
         $('#footer').append(jqXHR.responseText);
     });
 })

@@ -1,4 +1,6 @@
-$(document).ready(function(){
+// ISTE 340 | Project 2 | Darlene Ardila && Vicky Soler
+
+$(document).ready(function () {
 
 	function getData(pathName){
         return $.ajax({
@@ -14,12 +16,11 @@ $(document).ready(function(){
     getData({ path: '/research/' }).done(function (json) {
         
         //console.log(json);
-        
-        let tabNames1 = "<ul>";
-        let divs1 = "";
+        let tabNames1 = "<ul>"; //tab names
+        let divs1 = ""; //tab content
 
-        let tabNames2 = "<ul>";
-        let divs2 = "";
+        let tabNames2 = "<ul>"; //tab names
+        let divs2 = ""; //tab content
 
         $.each(json.byFaculty, function(index1,research1) {
             tabNames1 = tabNames1 + "<li><a href='#divID" + index1 + "'>" + research1.facultyName + "</a></li>";
@@ -29,6 +30,7 @@ $(document).ready(function(){
             })
             divs1 = divs1 + "</ul></div>";
         })
+        // creating tabs
         tabNames1 = tabNames1 + "</ul>";
         $("#faculty").append(tabNames1);
         $("#faculty").append(divs1);
@@ -42,46 +44,13 @@ $(document).ready(function(){
             })
             divs2 = divs2 + "</ul></div>";
         })
+        // creating tabs
         tabNames2 = tabNames2 + "</ul>";
         $("#interest").append(tabNames2);
         $("#interest").append(divs2);
         $("#interest").tabs();
-       
-        //tab layout
-       /* getData({path:'/courses/'}).done(function(json){
 
-            // Your Code To Process Output Goes here
-            console.log(json);
-    
-                let tabNames = "<ul>";
-                let divs ='';
-                $.each(json, function(index, course) {
-                    tabNames = tabNames + "<li><a href='#divID"
-                        + index + "'>"
-                        + course.degreeName + "</a></li>";
-                    divs = divs + course.semester;
-                    $.each(course.courses, function (index2, courseInfo) {
-                        divs = divs + "<div id=divID" + index2 + ">"
-                            + courseInfo + "</div>";
-                    })
-    
-                    
-                })
-                tabNames = tabNames + "</ul>";
-                $("#courses").append(tabNames);
-                $("#courses").append(divs);
-    
-                $("#courses").tabs();
-    
-        }).fail (function(jqXHR) {
-            // Consider using the jQueryUI "Dialog" widget to display errors
-            $('#courses').append(jqXHR.responseText);
-        });
-    })*/
-
-        
     }).fail (function(jqXHR) {
-        // Consider using the jQueryUI "Dialog" widget to display errors
         $('#research').append(jqXHR.responseText);
     })
 }) 

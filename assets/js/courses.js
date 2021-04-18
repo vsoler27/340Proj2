@@ -1,4 +1,7 @@
-$(document).ready(function(){
+// ISTE 340 | Project 2 | Darlene Ardila && Vicky Soler
+
+$(document).ready(function () {
+
     function getData(pathName){
         return $.ajax({
         type: 'get',
@@ -35,5 +38,7 @@ $(document).ready(function(){
             active: false,
             heightStyle: "content"
         });
-    })
+    }).fail(function (jqXHR) {
+        $('#courses').append(jqXHR.responseText);
+    });
 })

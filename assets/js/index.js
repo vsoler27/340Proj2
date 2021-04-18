@@ -1,4 +1,6 @@
-$(document).ready(function(){
+// ISTE 340 | Project 2 | Darlene Ardila && Vicky Soler
+
+$(document).ready(function () {
 
 	function getData(pathName){
         return $.ajax({
@@ -18,9 +20,7 @@ $(document).ready(function(){
         "<h3>" + json.description + "</h3>" + 
         "<h4>'" + json.quote + "' -" + json.quoteAuthor + "</h4>");
 
-
     }).fail (function(jqXHR) {
-        // Consider using the jQueryUI "Dialog" widget to display errors
         $('#about').append(jqXHR.responseText);
     });
 })
