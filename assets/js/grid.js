@@ -11,18 +11,23 @@ $(document).ready(function(){
     }
 
     getData({path:'/employment/coopTable/'}).done(function(json) {
-        console.log(json.coopTable.coopInformation);
+        //console.log(json.coopTable.coopInformation);
+        //creating the grid 
         $("#jsGrid").jsGrid({
+            //size of the grid
             width: "100%",
             height: "400px",
         
+            //properties of the grid
             inserting: true,
             editing: true,
             sorting: true,
             paging: true,
 
+            //info in the grid
             data: json.coopTable.coopInformation,
         
+            //headings in the grid
             fields: [
                 { name: "employer", type: "text", width: 150 },
                 { name: "degree", type: "text", width: 100 },

@@ -12,9 +12,8 @@ $(document).ready(function(){
     }
 
     getData({path:'/about/'}).done(function(json){
-
-        // Your Code To Process Output Goes here
         //console.log(json);
+        //printing about information
         $('#about').append("<h1>" + json.title + "</h1>" +
         "<h3>" + json.description + "</h3>" + 
         "<h4>'" + json.quote + "' -" + json.quoteAuthor + "</h4>");

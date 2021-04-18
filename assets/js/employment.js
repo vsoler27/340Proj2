@@ -23,8 +23,6 @@ $(document).ready(function(){
             
         })
 
-        //do employment table stuff w scroll
-
         //employers display
         $("#employment").append("<h2>" + json.employers.title + "</h2>");
         $("#employment").append("<p>");
@@ -39,8 +37,6 @@ $(document).ready(function(){
             $("#employment").append("<p>" + stats.value + " " + stats.description + "</p>");
             
         })
-
-        //do coop table stuff w scroll
 
         //careers display
         $("#employment").append("<h2>" + json.careers.title + "</h2>");
